@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Presentation</title>
+    <meta charset='utf-8'>
+    <script type="text/javascript" src='files/slides.js'></script>
+    <script type="text/javascript" src="files/cube.js"></script>
+    <script type="text/javascript" src="files/jquery.js"></script>
+    <!--<script type="text/javascript" src="files/jcarousel.js"></script> -->
+    <script type="text/javascript" src="numbers/gallery.js"></script>
+</head>
+<style>
+    /* Your individual styles here, or just use inline styles if that’s
+       what you want. */
+    article > h1, article > h2, article > h3, article > p, article, article li
+    {
+        font-family: Segoe UI;
+    }
+    article.bg
+    {
+        background: url(files/walle.png) 500px 350px no-repeat;
+    }
+    .slides > article.vid
+    {
+        background: white;
+        padding: 0px;
+    }
+    video
+    {
+        z-index: 2000;
+    }
+    .slide-area
+    {
+        display: none;
+    }
+    
+    iframe
+    {
+        margin: auto;
+    }
+    
+</style>
+<body style='display: none' onload="start()">
+    <section class='slides layout-regular '>
+      <article class="bg">
+        <h1>
+          Машинное зрение
+          <br>
+          
+        </h1>
+        <p>
+          Рогожников Алексей
+          <br>
+          МХЛ, 2011
+        </p>
+      </article>
+	  
+      <article class="bg">
+        <h3 style="font-size: 42px;">
+          Машинное зрение НЕ интересует:
+        </h3>
+		<ul>
+			<li>Может ли робот видеть?</li>
+			<li>Как прикрутить камеру к роботу и зачем?</li>
+			<li>Какова точка зрения роботов на гуманоидное общество? </li>
+			<li>и т.д.</li>
+		</ul>
+        
+      </article>
+	  
+      <article class="bg">
+        <h3 style="font-size: 42px;">
+          Машинное зрение интересует:
+        </h3>
+		<p style="font-size: 36px;">
+			<br />
+			какая информация находится на фотографии и как её можно получить
+		</p>
+		<br />
+		<p> Замечание: Wall-E был добавлен, чтобы запутать.
+		</p>
+      </article>
+	  
+	  
+	  <article class=" fill">
+        <h3>
+          Какая информация находится на этом изображении?
+        </h3>
+		<img src="files/faller2.jpg" align="center"/>
+      </article>
+	  
+	  <article class="">
+        <h3 style="font-size: 42px;">
+          Пример <br /> 
+		  задача распознавания текста
+        </h3>
+		<br />
+		<img src="files/abbyy.png" />
+		
+      </article>
+
+	  <article class=" vid">
+        <h3 style="font-size: 42px;  margin: 30px;">
+		Распознавание и замена текста
+        </h3> 
+		<h3 style="margin: 30px;">Приложение Word Lens</h3>
+        <iframe width="900" src="https://www.youtube.com/embed/h2OfQdYrHRs" frameborder="0" allowfullscreen></iframe>
+      </article>
+	  
+	  <article class=" vid">
+        <h3 style="font-size: 42px;  padding: 30px;"">
+          Пример <br /> 
+		  распознавание номеров
+        </h3>
+		<br />
+		<img src="files/car1.png" />
+		<img src="files/car2.png" />
+      </article>
+
+	  <article class=" vid">
+        <iframe src="http://player.vimeo.com/video/23518851?title=0&amp;byline=0&amp;portrait=0" width="900" frameborder="0"></iframe>
+      </article>
+	  
+
+      <article class=" vid" >
+	  	<script>
+	  	    var cube;
+            initialized = false;
+	  	    function start_on_slide() {
+                if(initialized == false){
+                    start();
+                    initialized = true;
+                }
+            }
+	  	    function start() {
+	  	        cube = new RubikCube(document.getElementById("canvasCube"), { size: 3 });
+	  	    }
+	  	    function solve() {
+	  	        for (i = 0; i < 100; i++) cube.undo();
+	  	    }
+		</script>        
+        <h3 onClick="solve()" style="font-size: 42px;  padding: 30px;"> Обучение по видеоряду </h3>
+		
+		<canvas onClick='start_on_slide()' width="900" height="600" id="canvasCube" style="margin:10px 0px;">
+		</canvas> 
+
+      </article>
+
+ 	  <article class=" vid">
+        <h3 style="font-size: 42px;  padding: 30px;">Обучение по видеоряду </h3>
+        <iframe width="900" src="https://www.youtube.com/embed/1GhNXHCQGsM" frameborder="0" allowfullscreen></iframe>
+      </article>
+
+ 	  <article class=" vid">
+		<h3 style="font-size: 42px;  margin: 30px;">Устройство 3d модели</h3>
+		<img src="numbers/model2.png" width="900" >
+      </article>
+
+  	  <article class=" vid">
+		<h3 style="font-size: 42px;  margin: 30px;"> Синтез сцены по изображениям</h3>
+		<h3 style="margin: 10px 30px;">Microsoft PhotoSynth</h3>
+		<iframe frameborder="0" src="http://photosynth.net/embed.aspx?cid=9d36543d-9655-4c86-b231-ca7a99e9bb47&slideShowPlaying=false" width="500" height="300"></iframe>
+      </article>
+
+  	  <article class=" vid">
+         <h3 style="font-size: 42px;  padding: 30px;">3d реконструкция</h3>
+         <iframe width="900" src="https://www.youtube.com/embed/zLDBvp9ISfQ" frameborder="0" allowfullscreen></iframe>
+      </article>
+	  
+	  <article class=" vid">
+		<h3 style="font-size: 42px;  margin: 30px;"> Восстановление мимики с 32х камер</h3>
+		<h3 style=" margin: 30px;">LA Noire</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/CBYlRD-Hk8k" frameborder="0" allowfullscreen></iframe>
+      </article>
+	  
+	  <article class=" vid fill">
+		<h3 style="font-size: 42px;  margin: 30px;"> Microsoft Kinect </h3>
+		<img src="files/kinect.jpg" width="900" />
+      </article>
+	  
+   	  <article class="vid">
+		<h3 style="font-size: 42px;  padding: 30px;">Дополненная реальность</h3>
+        <iframe width="420" height="315" src="https://www.youtube.com/embed/23_sboxOH34" frameborder="0" allowfullscreen></iframe>
+      </article>
+	  
+	  <article class="vid">
+		<h3 style="font-size: 42px;  margin: 30px;"> Примеры на основе маркеров</h3>
+		<h3 style=" margin: 30px;">Компания RED<span style="color: #E33;">MAD</span>ROBOT</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/lbqfZP4zOnY" frameborder="0" allowfullscreen></iframe>
+      </article>
+
+ 	  <article class="vid">
+		<h3 style="font-size: 42px;  margin: 30px;"> Концепт использования в автосервисах</h3>
+		<h3 style=" margin: 30px;">Компания BMW</h3>
+        <iframe width="420" height="315" src="https://www.youtube.com/embed/Y5ywMb6SeGc" frameborder="0" allowfullscreen></iframe>
+      </article>
+
+	  
+	  <article class="vid">
+		<h3 style="font-size: 42px;  margin: 30px;"> Перерыв</h3>
+		<img src="files/walle2.jpg" width="600px" style="margin: 150px" />
+      </article>
+	  
+	  <article class="">
+		<h3 style="font-size: 42px;"> Основные задачи машинного зрения</h3>
+		<ul class="oldbuild">
+          <li>
+            Нахождение<br />
+			<small>Есть ли машина на изображении? Где она? Где её номер? Есть ли лица? Где?</small>
+          </li>
+          <li>
+            Распознавание<br />
+			<small>Какая марка машины? Каков номер машины? Лицо - мужское или женское? Есть ли оно в базе?</small>
+          </li>
+          <li>
+            Сопоставление <br />
+			<small> Где находится колонна на других фотографиях? </small>
+          </li>
+		  <li>
+			Сбор признаков объекта <br />
+			<small> Как далеко он? Как повернут? Человек - улыбается или хмурится?  </small>
+		  </li>
+        </ul>
+      </article>
+	  
+	  <article>
+		<h3 style="font-size: 42px;"> Распознавание цифры номера </h3>
+		<img src ="numbers/slide1.png" style="margin: 80px 200px;" />
+		<h3 style="font-size: 42px;"> Обесцвеченный вариант </h3>
+		<img src ="numbers/slide2.png" style="margin: 80px 200px;" />
+	  </article>
+	  
+	  	  
+	  <article>
+	  	<h3 style="font-size: 42px;"> Обесцвеченный вариант </h3>
+		<img src ="numbers/slide2.png" style="margin: 40px 200px;" />
+		<h3 style="font-size: 42px;"> Бинаризация по порогу </h3>
+		<img src ="numbers/slide3.png" style="margin: 40px 200px;" />
+		<h3 style="font-size: 42px;"> Умная инверсия </h3>
+		<img src ="numbers/slide4.png" style="margin: 40px 200px;" />
+		
+	  </article>
+
+	  <article>
+	  	<h3 style="font-size: 42px;"> Задачка для дошкольников</h3>
+		<img src ="numbers/slide5.png" style="margin: 40px;" width="800px" />
+	  </article>
+
+	  <article>
+	  	<h3 style="font-size: 42px;"> Подсчет областей </h3>
+		<img src ="numbers/slide6-1.png" style="margin: 20px;" height="200px" />
+		<img src ="numbers/slide6-2.png" style="margin: 20px ;" height="200px" /> <br />
+		<img src ="numbers/slide7-2.png" style="margin: 20px ;" height="200px" />
+		<img src ="numbers/slide7-1.png" style="margin: 20px ;" height="200px" />
+
+	  </article>
+	  
+	  
+	  <article>
+	  	<h3 style="font-size: 42px;"> Характеристика Эйлера </h3>
+		<img src ="numbers/corners.png" style="margin: 40px 0px;" width="700px" />
+	  </article>
+	  
+	  
+	  <article>
+		<h3 style="font-size: 42px;"> Характеристика Эйлера </h3>
+
+		<div id="player" style="margin: 10px -30px ">
+			
+			<img src="numbers/corners1.png" alt="" width="700" />
+			<img src="numbers/corners2.png" alt="" width="700" />
+			<img src="numbers/corners3.png" alt="" width="700" />
+			<img src="numbers/corners4.png" alt="" width="700" />
+			<img src="numbers/corners5.png" alt="" width="700" />
+			<img src="numbers/corners6.png" alt="" width="700" />
+			<img src="numbers/corners7.png" alt="" width="700" />
+			<img src="numbers/corners8.png" alt="" width="700" />
+			<img src="numbers/corners9.png" alt="" width="700" />
+			<img src="numbers/corners10.png" alt="" width="700" />
+		</div>
+		<script>
+		    $(function () { $('#player').jqFancyTransitions({ width: 850, height: 638, navigation: true, delay: 30000000, position: 'top', strips: 1 }) });
+		</script>
+	  </article>
+	  
+	  	  
+	  <article>
+	  	
+		<img src ="numbers/euler.png" style="margin: 40px 0px;" width="700px" />
+	  </article>
+	  
+	  
+	  <article>
+	  	<h3 style="font-size: 42px;"> Другие характеристики </h3>
+		<ul class="oldbuild">
+          <li>
+			Площадь
+          </li>
+          <li>
+		    Размеры
+          </li>
+          <li>
+		    Периметр
+          </li>
+		  <li>
+		    Центр масс
+		  </li>
+		  <li>
+		    И многое другое
+		  </li>
+		  
+        </ul>
+	  </article>
+	  <article>
+		<h1>Слава роботам!</h1>
+		<h3>Конец демонстрации</h3>
+		<img src ="numbers/bender.png" style="margin: 40px 0px 40px 350px;" width="300px" />
+	  </article>
+	  
+  	  <article style="line-height: 22px;">
+	  	<h3>Спасибо Александру Молчанову за слизней.</h3>
+		<h3>Ссылки, источники</h3>
+		<br />
+		<small ><ul >
+		<li><a href="http://www.artlebedev.ru/kovodstvo/sections/145/">&laquo;Бессмысленная презентация&raquo;</a>
+		<li><a href="http://courses.graphicon.ru">Курсы компьютерной графики</a>
+		<li><a href="http://habrahabr.ru/blogs/augmented_reality/118123/">Серия статей "На пороге дополненной реальности"</a>
+		<li><a href="http://www.youtube.com/watch?v=1GhNXHCQGsM">Презентация алгоритма Predator</a>
+		<li><a href="http://redmadrobot.ru">Компания REDMADROBOT</a>
+		<li><a href="http://www.youtube.com/watch?v=P9KPJlA5yds">BMW augmented reality</a>
+		<li><a href="http://www.youtube.com/watch?v=NTOlEUAtGog">LA Noire</a>
+		<li><a href="http://www.photosynth.net">Система PhotoSynth</a>
+		<li><a href="http://habrahabr.ru/blogs/the_future_is_here/71905/">Обзор PhotoSynth</a>
+		<li><a href="http://www.youtube.com/watch?v=u1zzUWF3WOg">License Plate recognition System</a>
+		<li><a href="http://www.youtube.com/watch?v=fQLitLjCuXk">Apache helicopter in augmented realty</a>
+		<li><a href="http://code.google.com/p/html5slides/">Проект html5slides</a>
+		<li><a href="http://biorainbow.com/~lan/cube/cube.html">Кубик Рубика на html</a>
+		<li> И многие-многие другие
+		</ul>
+		
+		</small>
+	  </article>
+    </section>
+</body>
+</html>
