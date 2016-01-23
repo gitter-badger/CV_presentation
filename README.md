@@ -1,5 +1,7 @@
 # Computer vision presentation
 
+[![Join the chat at https://gitter.im/arogozhnikov/CV_presentation](https://badges.gitter.im/arogozhnikov/CV_presentation.svg)](https://gitter.im/arogozhnikov/CV_presentation?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Presentation about CV for school pupils in russian.
 http://arogozhnikov.github.io/CV_presentation/
 
